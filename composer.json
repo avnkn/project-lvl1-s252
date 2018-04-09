@@ -1,0 +1,11 @@
+{
+    "name": "v/12.brain-games",
+    "description": "Project 1 (hexlet)",
+    "authors": [
+        {
+            "name": "Andrey V",
+            "email": "vinyaykin@gmail.com"
+        }
+    ],
+    "require": {}
+}
