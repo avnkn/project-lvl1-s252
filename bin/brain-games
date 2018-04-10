@@ -1,2 +1,5 @@
 #!/usr/bin/env  php
-Welcome to the Brain Games!
+<?php
+require __DIR__ . "/../vendor/autoload.php";
+use function BrainGames\Cli\run;
+run();
