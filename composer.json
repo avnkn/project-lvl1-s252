@@ -1,6 +1,9 @@
 {
     "name": "v/12.brain-games",
-    "bin": [ "bin/brain-games"],
+    "bin": [
+      "bin/brain-games",
+      "bin/brain-even"
+    ],
     "description": "Project 1 (hexlet)",
     "authors": [
         {
@@ -19,7 +22,8 @@
     },
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Lib.php"
         ]
     }
 }
