@@ -1,2 +1,7 @@
 language: php
-install: make lint
+php:
+  - '7.1'
+
+install:
+  - composer self-update
+  - make lint
