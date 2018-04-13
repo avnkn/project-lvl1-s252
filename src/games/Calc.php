@@ -12,10 +12,18 @@ function game()
         $arg1 = rand(1, 100);
         $arg2 = rand(1, 100);
         $act = rand(1, 3);
-        switch ($act){
-            case 1: $act_str = "+"; $cor_answ = $arg1 + $arg2; break;
-            case 2: $act_str = "-"; $cor_answ = $arg1 - $arg2; break;
-            case 3: $act_str = "*"; $cor_answ = $arg1 * $arg2;
+        switch ($act) {
+            case 1:
+                $act_str = "+";
+                $cor_answ = $arg1 + $arg2;
+                break;
+            case 2:
+                $act_str = "-";
+                $cor_answ = $arg1 - $arg2;
+                break;
+            case 3:
+                $act_str = "*";
+                $cor_answ = $arg1 * $arg2;
         }
         line("Question: %s %s %s", $arg1, $act_str, $arg2);
         $answer = \cli\prompt('Your answer');

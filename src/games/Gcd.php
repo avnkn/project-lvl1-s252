@@ -15,7 +15,8 @@ function game()
         for ($j=0; $j < $arg_min; $j++) {
             $del = $arg_min - $j;
             if ($arg1%$del == 0 and $arg2%$del == 0) {
-                $cor_answ = $del; $arg_min = 0;
+                $cor_answ = $del;
+                $arg_min = 0;
             }
         }
         line("Question: %s %s", $arg1, $arg2);
