@@ -1,10 +1,13 @@
 <?php
-namespace BrainGames\Lib;
+namespace BrainGames\Games\Even;
 
 use function \cli\line;
+use function BrainGames\Cli\run;
 
-function brainGamesOne($name)
+function game()
 {
+    $desc_even = "Answer \"yes\" if number even otherwise answer \"no\".\n";
+    $name = run($desc_even);
     for ($i=0; $i < 3; $i++) {
         $x = rand(1, 100);
         line("Question: %s", $x);

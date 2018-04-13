@@ -2,7 +2,8 @@
     "name": "v/12.brain-games",
     "bin": [
       "bin/brain-games",
-      "bin/brain-even"
+      "bin/brain-even",
+      "bin/brain-calc"
     ],
     "description": "Project 1 (hexlet)",
     "authors": [
@@ -22,8 +23,9 @@
     },
     "autoload": {
         "files": [
-            "src/Cli.php",
-            "src/Lib.php"
+            "src/Cli.php",      
+            "src/games/Even.php",
+            "src/games/Calc.php"
         ]
     }
 }
