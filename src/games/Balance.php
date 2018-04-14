@@ -1,13 +1,11 @@
 <?php
 namespace BrainGames\Games\Balance;
 
-use function \cli\line;
-use function BrainGames\Cli\run;
+use function BrainGames\LogicGame\render;
 
 function game()
 {
-    $desc_even = "Balance the given number.\n";
-    $name = run($desc_even);
+    $desc = "Balance the given number.\n";
     for ($i=0; $i < 3; $i++) {
         $arg = rand(1, 1000);
         $arr_arg = str_split($arg);
@@ -19,15 +17,7 @@ function game()
             sort($arr_arg);
         }
         $cor_answ = implode('', $arr_arg);
-        line("Question: %s", $arg);
-        $answer = \cli\prompt('Your answer');
-        if ($answer == $cor_answ) {
-            line('Correct!');
-        } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$cor_answ'.");
-            line("Let's try again, $name!");
-            exit;
-        }
+        $arr_data[$arg] = $cor_answ;
     }
-    line("Congratulations, $name!");
+    render($desc, $arr_data);
 }

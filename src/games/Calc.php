@@ -1,13 +1,12 @@
 <?php
 namespace BrainGames\Games\Calc;
 
-use function \cli\line;
-use function BrainGames\Cli\run;
+use function BrainGames\LogicGame\render;
 
 function game()
 {
-    $desc_even = "What is the result of the expression?\n";
-    $name = run($desc_even);
+    $desc = "What is the result of the expression?\n";
+    $arr_data = [];
     for ($i=0; $i < 3; $i++) {
         $arg1 = rand(1, 100);
         $arg2 = rand(1, 100);
@@ -25,15 +24,7 @@ function game()
                 $act_str = "*";
                 $cor_answ = $arg1 * $arg2;
         }
-        line("Question: %s %s %s", $arg1, $act_str, $arg2);
-        $answer = \cli\prompt('Your answer');
-        if ($answer == $cor_answ) {
-            line('Correct!');
-        } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$cor_answ'.");
-            line("Let's try again, $name!");
-            exit;
-        }
+        $arr_data["$arg1 $act_str $arg2"] = $cor_answ;
     }
-    line("Congratulations, $name!");
+    render($desc, $arr_data);
 }
