@@ -9,7 +9,7 @@ function game()
     $func = function () {
         $a = rand(1, 100);
         $i_m = sqrt($a);
-        for ($i=2; $i<$i_m; ++$i) {
+        for ($i=2; $i<=$i_m; ++$i) {
             if ($a % $i == 0) {
                 $arr_data[$a] = "no";
                 return $arr_data;
