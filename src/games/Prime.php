@@ -7,7 +7,7 @@ function game()
 {
     $desc = 'Answer "yes" if number prime otherwise answer "no".';
     $func = function () {
-        $a = rand(1, 100);
+        $a = rand(2, 100);
         $i_m = sqrt($a);
         for ($i=2; $i<=$i_m; ++$i) {
             if ($a % $i == 0) {
