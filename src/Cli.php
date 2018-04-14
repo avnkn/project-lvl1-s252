@@ -7,7 +7,7 @@ function run($description = null)
 {
     line('Welcome to the Brain Game!');
     if ($description) {
-        line($description);
+        line("$description\n");
     }
     $name = \cli\prompt('May I have your name?');
     line("Hello, %s!\n", $name);
