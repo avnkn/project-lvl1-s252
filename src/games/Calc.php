@@ -6,8 +6,7 @@ use function BrainGames\LogicGame\render;
 function game()
 {
     $desc = "What is the result of the expression?\n";
-    $arr_data = [];
-    for ($i=0; $i < 3; $i++) {
+    $func = function(){
         $arg1 = rand(1, 100);
         $arg2 = rand(1, 100);
         $act = rand(1, 3);
@@ -25,6 +24,7 @@ function game()
                 $cor_answ = $arg1 * $arg2;
         }
         $arr_data["$arg1 $act_str $arg2"] = $cor_answ;
-    }
-    render($desc, $arr_data);
+        return $arr_data;
+    };
+    render($desc, $func);
 }
