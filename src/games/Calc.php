@@ -6,7 +6,7 @@ use function BrainGames\LogicGame\render;
 function game()
 {
     $desc = "What is the result of the expression?\n";
-    $func = function(){
+    $func = function () {
         $arg1 = rand(1, 100);
         $arg2 = rand(1, 100);
         $act = rand(1, 3);

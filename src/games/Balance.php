@@ -6,7 +6,7 @@ use function BrainGames\LogicGame\render;
 function game()
 {
     $desc = "Balance the given number.\n";
-    $func = function(){
+    $func = function () {
         $arg = rand(1, 1000);
         $arr_arg = str_split($arg);
         sort($arr_arg);
