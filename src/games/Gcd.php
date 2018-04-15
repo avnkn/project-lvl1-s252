@@ -11,11 +11,12 @@ function gcd($a, $b)
 function game()
 {
     $desc = "Find the greatest common divisor of given numbers.";
-    $func = function () {
-        $arg1 = rand(1, 100);
-        $arg2 = rand(1, 100);
-        $arr_data["$arg1 $arg2"] = gcd($arg1, $arg2);
-        return $arr_data;
+    $gameData = function () {
+        $randNum1 = rand(1, 100);
+        $randNum2 = rand(1, 100);
+        $arrForGame["quer"] = "$randNum1 $randNum2";
+        $arrForGame["answ"] = gcd($randNum1, $randNum2);
+        return $arrForGame;
     };
-    render($desc, $func);
+    render($desc, $gameData);
 }

@@ -4,18 +4,17 @@ namespace BrainGames\LogicGame;
 use function \cli\line;
 use function BrainGames\Cli\run;
 
-function render($desc, $func)
+function render($desc, $gameData)
 {
     $name = run($desc);
     for ($i=0; $i < 3; $i++) {
-        $q_a = $func();
-        $query = key($q_a);
-        line("Question: %s", $query);
+        $arrForGame = $gameData();
+        line("Question: %s", $arrForGame["quer"]);
         $answer = \cli\prompt('Your answer');
-        if ($answer == $q_a[$query]) {
+        if ($answer == $arrForGame["answ"]) {
             line('Correct!');
         } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$q_a[$query]'.");
+            line("'$answer' is wrong answer ;(. Correct answer was '{$arrForGame["answ"]}'.");
             line("Let's try again, $name!");
             exit;
         }

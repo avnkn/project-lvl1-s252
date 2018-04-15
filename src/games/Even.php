@@ -6,11 +6,12 @@ use function BrainGames\LogicGame\render;
 function game()
 {
     $desc = "Answer \"yes\" if number even otherwise answer \"no\".";
-    $func = function () {
-        $x = rand(1, 100);
-        $x%2 == 0 ? $cor_answ = "yes" : $cor_answ ="no";
-        $arr_data[$x] = $cor_answ;
-        return $arr_data;
+    $gameData = function () {
+        $randNum = rand(1, 100);
+        $randNum % 2 == 0 ? $corAnsw = "yes" : $corAnsw ="no";
+        $arrForGame["quer"] = $randNum;
+        $arrForGame["answ"] = $corAnsw;
+        return $arrForGame;
     };
-    render($desc, $func);
+    render($desc, $gameData);
 }

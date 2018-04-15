@@ -3,24 +3,28 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\LogicGame\render;
 
+function getElementArP($firstElem, $stepProgr, $numElem)
+{
+    return $firstElem + ($numElem - 1) * $stepProgr;
+}
 function game()
 {
     $desc = "What number is missing in this progression?";
-    $func = function () {
-        $a = rand(1, 10);
-        $b = rand(1, 10);
-        $r = rand(0, 9);
-        $q = "";
-        for ($i=0; $i<10; ++$i) {
-            if ($i != $r) {
-                $q = $q . ($a + $b * $i) . " ";
+    $gameData = function () {
+        $firstElem = rand(1, 10);
+        $stepProgr = rand(1, 10);
+        $randInd = rand(1, 10);
+        $query = "";
+        for ($i=1; $i<=10; ++$i) {
+            if ($i != $randInd) {
+                $query = $query . getElementArP($firstElem, $stepProgr, $i) . " ";
             } else {
-                $q = $q . ".. ";
-                $cor_answ = $a + $b * $i;
+                $query = $query . ".. ";
             }
         }
-        $arr_data["$q"] = $cor_answ;
-        return $arr_data;
+        $arrForGame["quer"] = $query;
+        $arrForGame["answ"] = getElementArP($firstElem, $stepProgr, $randInd);
+        return $arrForGame;
     };
-    render($desc, $func);
+    render($desc, $gameData);
 }

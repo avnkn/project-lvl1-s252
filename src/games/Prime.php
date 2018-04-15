@@ -3,20 +3,24 @@ namespace BrainGames\Games\Prime;
 
 use function BrainGames\LogicGame\render;
 
+function isPrime($num)
+{
+    $sqrtNum = sqrt($num);
+    for ($i=2; $i<=$sqrtNum; ++$i) {
+        if ($num % $i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
 function game()
 {
     $desc = 'Answer "yes" if number prime otherwise answer "no".';
-    $func = function () {
-        $a = rand(2, 100);
-        $i_m = sqrt($a);
-        for ($i=2; $i<=$i_m; ++$i) {
-            if ($a % $i == 0) {
-                $arr_data[$a] = "no";
-                return $arr_data;
-            }
-        }
-        $arr_data[$a] = "yes";
-        return $arr_data;
+    $gameData = function () {
+        $arrForGame["quer"] = rand(2, 100);
+        isPrime($arrForGame["quer"]) ? $arrForGame["answ"] = "yes" : $arrForGame["answ"] = "no";
+        return $arrForGame;
     };
-    render($desc, $func);
+    render($desc, $gameData);
 }
